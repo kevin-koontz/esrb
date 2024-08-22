@@ -1,5 +1,8 @@
 let bank = 100
 
+const userStartBalanceElm = document.getElementById('bank')
+const userBankElm = document.getElementById('bank')
+
 const players = [
   { teamNumber: 1, emoji: '🏃‍♂️', skill: 10, name: "D'Marcus Williums" },
   { teamNumber: 1, emoji: '🤾‍♂️', skill: 30, name: "Tyroil Smoochie-Wallace" },
@@ -36,4 +39,95 @@ function drawTeam1() {
   // console.log('here are team 1 players', team1Content);
   const team1Elm = document.getElementById('team1')
   team1Elm.innerText = team1Content
+}
+
+function drawTeam2() {
+  let team2Content = ''
+  for (let i = 0; i < players.length; i++) {
+    let playersTeam2 = players[i]
+    if (playersTeam2.teamNumber == 1) {
+      // console.log('team2', playersTeam2);
+      team2Content += playersTeam2.emoji
+    }
+  }
+  // console.log('here are team 2 players', team2Content);
+  const team2Elm = document.getElementById('team2')
+  team2Elm.innerText = team2Content
+}
+
+// function drawBank() {
+
+//   userStartBalanceElm.innerText = bank.toFixed(2)
+
+//   drawBank()
+
+// }
+
+function betTeam1() {
+  const team1 = players.filter((players) => players.teamNumber == 1)
+  const team2 = players.filter((players) => players.teamNumber == 2)
+
+  // console.log('🏂 team 1', team1)
+  // console.log('🎿 team 2', team2)
+
+  let totalSkillTeam1 = 0
+  for (let i = 0; i < team1.length; i++) {
+    let player = team1[i]
+    totalSkillTeam1 += player.skill
+  }
+  // console.log('total skill team 1', totalSkillTeam1);
+
+  let totalSkillTeam2 = 0
+  for (let i = 0; i < team1.length; i++) {
+    let player2 = team2[i]
+    totalSkillTeam2 += player2.skill
+  }
+  // console.log('total skill team 2', totalSkillTeam2);
+
+  let userBank = 0
+  if (totalSkillTeam1 > totalSkillTeam2 == true) {
+    userBank = bank + 5
+    console.log('You WON! +$5.00', userBank);
+  }
+  else {
+    userBank = bank - 5
+    console.log('You LOST! -$5.00', userBank);
+  }
+  console.log('new bank balance: ', userBank);
+
+}
+
+function betTeam2() {
+  const team1 = players.filter((players) => players.teamNumber == 1)
+  const team2 = players.filter((players) => players.teamNumber == 2)
+
+  // console.log('🏂 team 1', team1)
+  // console.log('🎿 team 2', team2)
+
+  let totalSkillTeam1 = 0
+  for (let i = 0; i < team1.length; i++) {
+    let player = team1[i]
+    totalSkillTeam1 += player.skill
+  }
+  // console.log('total skill team 1', totalSkillTeam1);
+
+  let totalSkillTeam2 = 0
+  for (let i = 0; i < team1.length; i++) {
+    let player2 = team2[i]
+    totalSkillTeam2 += player2.skill
+  }
+  // console.log('total skill team 2', totalSkillTeam2);
+
+  let userBank = 0
+  if (totalSkillTeam2 > totalSkillTeam1 == true) {
+    userBank = bank + 5
+    console.log('You WON! +$5.00', userBank);
+  }
+  else {
+    userBank = bank - 5
+    console.log('You LOST! -$5.00', userBank);
+  }
+  console.log('new bank balance: ', userBank);
+
+  userBankElm.innerText = '' + userBank.toFixed(2)
 }
