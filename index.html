@@ -28,7 +28,7 @@
         <h1>bank</h1>
         <div class="card bg-success p-2">
           <!-- Section bank balance -->
-          <div>Bank Balance: $<span id="bank">100.00</span></div>
+          <div>Bank Balance: $<span id="bank">0.00</span></div>
         </div>
       </div>
     </section>
@@ -53,11 +53,13 @@
     </section>
     <!-- SECTION bet 5 25 100 btns -->
     <section class="row">
+      <!-- SECTION team1 btns -->
       <div class="col-md-6">
-        <div class="btn btn-primary">BET 5</div>
-        <div class="btn btn-primary">BET 25</div>
-        <div class="btn btn-primary">BET 100</div>
+        <div onclick="drawBankUpdateBet5Team1()" class="btn btn-primary">BET 5</div>
+        <div onclick="drawBankUpdateBet25Team1()" class="btn btn-primary">BET 25</div>
+        <div onclick="drawBankUpdateBet100Team1()" class="btn btn-primary">BET 100</div>
       </div>
+      <!-- SECTION team2 btns -->
       <div class="col-md-6">
         <div class="btn btn-primary">BET 5</div>
         <div class="btn btn-primary">BET 25</div>
