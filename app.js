@@ -129,5 +129,5 @@ function betTeam2() {
   }
   console.log('new bank balance: ', userBank);
 
-  userBankElm.innerText = '' + userBank.toFixed(2)
+  userBankElm.innerText = userBank.toFixed(2)
 }
